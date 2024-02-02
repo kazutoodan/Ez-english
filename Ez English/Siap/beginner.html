@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <link rel="stylesheet" href="style.css">
+ <title>EZ ENGSLIH </title>
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body>
+  <div class="header">
+    <b>
+      <a class="Home" href="home.html">Home</a>
+      <a href="Learn.html">Learn</a>
+      <a href="Exercise.html">Exercise</a>
+    </b>
+    <img class="webLogo" src="image/Ez English.png" style="width:230px; height:65px;">
+  </div>
+  <h1>BEGINNER EXERCISE</h1>
+<P id="Score"></P>
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 5</div>
+    <h1>QUESTION 1</h1>
+    <form name=qts id=qts>
+      <p>She works______Saturday</p>
+     <input type="radio" name="choice" value="at">
+     <label for="at">at</label><br>
+     <input type="radio" name="choice" value="to">
+     <label for="to">to</label><br>
+     <input type="radio" name="choice" value="on">
+     <label for="on">on</label><br>
+     <input type="radio" name="choice" value="because">
+     <label for="because">because</label><br>
+     </div>
+
+     <div class="mySlides fade">
+      <div class="numbertext">2 / 5</div>
+      <h1>QUESTION 2</h1>
+        <p>I stay at home_______ the morning</p>
+       <input type="radio" name="choice2" value="at">
+       <label for="at">at</label><br>
+       <input type="radio" name="choice2" value="to">
+       <label for="to">to</label><br>
+       <input type="radio" name="choice2" value="in">
+       <label for="in">in</label><br>
+       <input type="radio" name="choice2" value="on">
+       <label for="on">on</label><br>
+      </div>
+
+
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 5</div>
+        <h1>QUESTION 3</h1>
+          <p>How do  you get to work?_____.</p>
+         <input type="radio" name="choice3" value="By car">
+         <label for="By car">By car</label><br>
+         <input type="radio" name="choice3" value="In car">
+         <label for="In car">In car</label><br>
+         <input type="radio" name="choice3" value="By the car">
+         <label for="but">By the car</label><br>
+         <input type="radio" name="choice3" value="On car">
+         <label for="On car">On car</label><br>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 5</div>
+          <h1>QUESTION 4</h1>
+            <p>Do you like classical music?</p>
+           <input type="radio" name="choice4" value="Yes,i likes">
+           <label for="Yes,I likes">Yes,I likes </label><br>
+           <input type="radio" name="choice4" value="Yes,i like">
+           <label for="Yes I like">Yes,I like</label><br>
+           <input type="radio" name="choice4" value="Yes, i does">
+           <label for="Yes, I does">Yes, I does</label><br>
+           <input type="radio" name="choice4" value="Yes, I do">
+           <label for="On car">Yes, I do</label><br>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">5 / 5</div>
+            <h1>QUESTION 5</h1>
+              <p>where is Mary? She_____over there</p>
+             <input type="radio" name="choice5" value="is stand">
+             <label for="is stand">is stand </label><br>
+             <input type="radio" name="choice5" value="is standing">
+             <label for="is standing">is standing</label><br>
+             <input type="radio" name="choice5" value="stand">
+             <label for="stand">stand</label><br>
+             <input type="radio" name="choice5" value="standing">
+             <label for="standing">standing</label><br><br>
+             <button class="check" onclick="checking_answer()">check</button>
+            </div>
+        </form><br>
+  </div><br><br><br>
+  <!-- Next and previous buttons -->
+  <div class="btn-page">
+    <a class="prev" onclick="plusSlides(-1)">PREVIOUS</a>
+    <a class="next" onclick="plusSlides(1)">NEXT</a>
+  </div>
+<br>
+<p id="result"></p>
+
+</body>
+
+</html>
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n)
+    {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+function checking_answer()
+    {
+      var result=document.getElementById('result');
+      var wrong=0;
+      var score=0;
+      var q1=document.qts.choice.value;
+      var q2=document.qts.choice2.value;
+      var q3=document.qts.choice3.value;
+      var q4=document.qts.choice4.value;
+      var q5=document.qts.choice5.value;
+
+      if(q1=="on")
+      {
+        score+=10;
+      }
+      else
+       wrong+=1;
+
+      if(q2=="in")
+      {
+        score+=10;
+      }
+      else
+       wrong+=1;
+
+      if(q3=="By car")
+      {
+        score+=10;
+      }
+      else
+       wrong+=1;
+
+      if(q4=="Yes, I do")
+      {
+        score+=10;
+      }
+      else
+       wrong+=1;
+
+      if(q5=="standing")
+      {
+        score+=10;
+      }
+      else
+       wrong+=1;
+
+   location.replace("Exercise.html")
+   if(score<=30)
+   {
+     alert("Your score is "+score+" please do more execersice ");
+   }
+   else
+   {
+    alert("Your score is "+score+" keep it up ");
+   }
+
+  }
+</script>
